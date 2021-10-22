@@ -10,19 +10,19 @@
 #include <stdio.h>
 #include <math.h>
 
-double runCalculator();
+double runCalculator(void);
 void scanData(char*, double*);
 int isUnary(char);
 void doNextOp(char, double, double*);
 
-int main() {
+int main(void) {
     printf("The final result is %lf.\n", runCalculator());
 
     return EXIT_SUCCESS;
 }
 
 /* Function to run the calculator and return the result*/
-double runCalculator() {
+double runCalculator(void) {
     int programActive = 1;
     double accumulator = 0.0, operand;
     char operator;
@@ -127,7 +127,9 @@ void doNextOp(char operator, double operand, double *accumulator) {
             *accumulator *= -1.0;
             break;
         case '!':
-            *accumulator = 1 / *accumulator;
+            if (*accumulator != 0.0) {
+                *accumulator = 1 / *accumulator;
+            }
             break;
         }
 }
