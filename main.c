@@ -17,7 +17,6 @@ void doNextOp(char, double, double*);
 
 int main(void) {
     printf("The final result is %lf.\n", runCalculator());
-
     return EXIT_SUCCESS;
 }
 
@@ -92,7 +91,7 @@ int isUnary(char operator) {
             break;
 
         default:
-            tempIsUnary = 2;
+            tempIsUnary = -1;
             break;
     }
     return tempIsUnary;
@@ -119,7 +118,7 @@ void doNextOp(char operator, double operand, double *accumulator) {
             *accumulator = pow(*accumulator,operand);
             break;
         case '#': 
-            if (operand >= 0.0) {
+            if (*accumulator >= 0.0) {
                 *accumulator = sqrt(*accumulator);
             }
             break;
