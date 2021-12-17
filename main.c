@@ -3,6 +3,9 @@
 //  Commandline Calculater C
 //
 //  Created by Bastian Brix Hansen on 22.10.2021.
+//  Studying: Software
+//  e-mail: bha21@student.aau.dk
+//  Group: B226
 //  Copyright © 2021 Bastian Brix Hansen. All rights reserved.
 */
 
